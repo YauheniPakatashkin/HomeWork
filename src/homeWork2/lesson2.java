@@ -59,7 +59,7 @@ public class lesson2 {
 
         System.out.println("Сумма нечетных чисел от 1 до 99 равна "+ count1);
 
-        //Задача 8
+        //Задача 8 в процессе
         for (int i = 0; i < 5; i++) {
             System.out.println();
             for (int j = 0; j < i; j++) {
