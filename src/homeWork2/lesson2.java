@@ -49,6 +49,24 @@ public class lesson2 {
                 System.out.print(p+" ");
             }
         }
+        System.out.println("");
+        //Задача 7
+        int count1 = 0;
+        for (int i = 0; i <100; i++) {
+            if(i%2!=0)
+                count1+=i;
+        }
+
+        System.out.println("Сумма нечетных чисел от 1 до 99 равна "+ count1);
+
+        //Задача 8
+        for (int i = 0; i < 5; i++) {
+            System.out.println();
+            for (int j = 0; j < i; j++) {
+                System.out.print("*");
+            }
+
+        }
 
 
     }
