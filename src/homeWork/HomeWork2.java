@@ -1,12 +1,11 @@
-package homeWork2;
+package homeWork;
 
-
-public class lesson2 {
+public class HomeWork2 {
     public static void main(String[] args) {
         //Задача 1
         double s = 10;
         double rezult = 0;
-        for (int i = 0; i < 7; i++) {
+        for (int i = 1; i < 8; i++) {
             rezult += s;
             s = s * 1.1;
         }

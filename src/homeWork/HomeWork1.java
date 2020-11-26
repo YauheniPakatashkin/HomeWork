@@ -1,6 +1,6 @@
-package homeWork1;
+package homeWork;
 
-public class Main {
+public class HomeWork1 {
 
     public static void main(String[] args) {
         // задача 1
