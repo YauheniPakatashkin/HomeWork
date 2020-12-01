@@ -14,6 +14,7 @@ public class HomeWork3 {
         task5();
         task6();
         task7();
+        task8();
 
     }
 
@@ -105,8 +106,8 @@ public class HomeWork3 {
         }
         double c = a / 5;
         double d = b / 5;
-        System.out.println("Среднее арифметическое первого массива "+c);
-        System.out.println("Среднее арифметическое первого массива "+d);
+        System.out.println("Среднее арифметическое первого массива " + c);
+        System.out.println("Среднее арифметическое первого массива " + d);
         if (c > d) {
             System.out.println("Среднее арифметическое первого массива больше");
         }
@@ -143,21 +144,47 @@ public class HomeWork3 {
     }
 
     public static void task7() {
-        int[] array2 = new int[12];
+        int[] array = new int[12];
         Random random = new Random();
-        for (int i = 0; i < array2.length; i++) {
-            array2[i] = random.nextInt(15);
+        for (int i = 0; i < array.length; i++) {
+            array[i] = random.nextInt(15);
         }
-        System.out.println(Arrays.toString(array2));
-        int max = array2[0];
-        for (int i = 0; i < array2.length; i++) {
-            if (max < array2[i]) {
-                max = array2[i];
+        System.out.println(Arrays.toString(array));
+        int max = array[0];
+        int index = 0;
+        for (int i = 0; i < array.length; i++) {
+            if (max < array[i]) {
+                max = array[i];
+            }
+            if (array[i] == max) {
+                index = i;
             }
         }
-        System.out.println("Максимальное число "+max);
+        System.out.println("Максимальное число " + max);
+        System.out.println("Индекс последнего вхождения в массив "+index);
+        System.out.println(" ");
+    }
 
-
+    public static void task8(){
+        Random random = new Random();
+        int []array1 = new int[10];
+        int []array2 = new int[10];
+        double[]array3 = new double[10];
+        for (int i = 0; i < 10; i++) {
+            array1[i]= random.nextInt(10);
+            array2[i]= random.nextInt(10);
+            array3[i]= (double)array1[i]/array2[i];
+        }
+        System.out.println(Arrays.toString(array1));
+        System.out.println(Arrays.toString(array2));
+        System.out.println(Arrays.toString(array3));
+        int count =0;
+        for (int i = 0; i < array3.length; i++) {
+            if(array3[i]%1==0){
+                count++;
+            }
+        }
+        System.out.println("Количество целых чисел в третьем массиве: "+count);
     }
 }
 
