@@ -15,6 +15,7 @@ public class HomeWork3 {
         task6();
         task7();
         task8();
+        task9();
 
     }
 
@@ -185,6 +186,47 @@ public class HomeWork3 {
             }
         }
         System.out.println("Количество целых чисел в третьем массиве: "+count);
+        System.out.println(" ");
+    }
+    public static void task9(){
+        Scanner scanner = new Scanner(System.in);
+        Random random = new Random();
+        System.out.println("Введите положительное число");
+        int a = scanner.nextInt();
+        while (a<0){
+            System.out.println("Вы ввели неподходящее число. Введите положительное число.");
+            a = scanner.nextInt();
+        }
+        int[]mass = new int[a];
+        for (int i = 0; i < a; i++) {
+            mass[i]= random.nextInt(16);
+        }
+        System.out.println(Arrays.toString(mass));
+        int summ1 = 0, summ2 = 0;
+        if(a%2==0){
+            for (int i = 0; i < a/2; i++) {
+                summ1+=mass[i];
+            }
+        }
+        else{
+            for (int i = 0; i <=a/2; i++) {
+                summ1+=mass[i];
+            }
+        }
+        for (int i = a/2; i < a; i++) {
+            summ2+=mass[i];
+        }
+        System.out.println("Сумма первой половины "+summ1);
+        System.out.println("Сумма второй половины "+summ2);
+        if (summ1>summ2){
+            System.out.println("Сумма первой половины массива больше");
+        }
+        if (summ1<summ2){
+            System.out.println("Сумма второй половины массива больше");
+        }
+        if (summ1>summ2){
+            System.out.println("Суммы первой и второй половин массива равны");
+        }
     }
 }
 
