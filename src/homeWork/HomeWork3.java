@@ -17,6 +17,7 @@ public class HomeWork3 {
         task8();
         task9();
         task10();
+        task11();
 
     }
 
@@ -236,36 +237,129 @@ public class HomeWork3 {
         Random random = new Random();
         System.out.println("Введите число больше трех");
         int n = scanner.nextInt();
-        while (n<=3){
+        while (n <= 3) {
             System.out.println("Вы ввели неподходящее число");
             n = scanner.nextInt();
         }
-        int [] mass = new int[n];
+        int[] mass = new int[n];
         for (int i = 0; i < n; i++) {
-            mass[i] = random.nextInt(n+1);
+            mass[i] = random.nextInt(n + 1);
         }
         System.out.println(Arrays.toString(mass));
         int even = 0;
         for (int i = 0; i < n; i++) {
-            if(mass[i]%2==0){
+            if (mass[i] % 2 == 0) {
                 even++;
             }
         }
-        if(even>0){
-            int[]massEven = new int[even];
+        if (even > 0) {
+            int[] massEven = new int[even];
             for (int i = 0; i < even; i++) {
                 for (int j = 0; j < n; j++) {
-                    if(mass[j]%2==0){
-                        massEven[i]=mass[j];
+                    if (mass[j] % 2 == 0) {
+                        massEven[i] = mass[j];
                         i++;
                     }
                 }
             }
             System.out.println(Arrays.toString(massEven));
-        }
-        else {
+        } else {
             System.out.println("В массиве нет четных чисел");
         }
     }
-}
 
+    public static void task11() {
+        //Многомерные массивы
+        /*Создаём квадратную матрицу, размер вводим с клавиатуры. Заполняем
+        случайными числами в диапазоне от 0 до 50. И выводим на консоль(в виде
+        матрицы).*/
+        Random random = new Random();
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Введите размер матрицы");
+        int n = scanner.nextInt();
+        int[][] array = new int[n][n];
+        for (int i = 0; i < array.length; i++) {
+            for (int j = 0; j < array[i].length; j++) {
+                array[i][j] = random.nextInt(51);
+            }
+        }
+        for (int i = 0; i < array.length; i++) {
+            for (int j = 0; j < array[i].length; j++) {
+                System.out.print(array[i][j] + " ");
+            }
+            System.out.println(" ");
+        }
+        //Посчитать сумму элементов, стоящих на главной диагонали
+        int summ = 0;
+        for (int i = 0; i < array.length; i++) {
+            if (array[i][i] % 2 == 0) {
+                summ += array[i][i];
+            }
+        }
+        System.out.println("Сумма четных элементов, находящихся на главной диагонали "+summ);
+
+        //Вывести нечетные элементы, находящиеся под главной диагональю (включиельно)
+        System.out.print("Нечетные элементы под главной диагональю: ");
+        for (int i = 1; i < array.length; i++) {
+            if (array[i][i - 1] % 2 != 0) {
+                System.out.print(array[i][i - 1] + " ");
+            }
+        }
+        System.out.println(" ");
+
+        //Проверить произведение элементов какой диагонали больше
+        long proizvedenieOsnov = 1;
+        long proizvedeniePobochn = 1;
+        for (int i = 0; i < array.length; i++) {
+            if (array[i][i]!=0) {
+                proizvedenieOsnov *=array[i][i];
+            }
+        }
+        for (int i = 0; i < array.length; i++) {
+            if (array[i][array.length-i-1]!=0) {
+                proizvedeniePobochn *= array[i][array.length-i-1];
+            }
+        }
+        System.out.println("Произведение основной диагонали "+ proizvedenieOsnov);
+        System.out.println("Произведение побочной диагонали "+ proizvedeniePobochn);
+        if(proizvedenieOsnov>proizvedeniePobochn){
+            System.out.println("Произведение элементов основной диагонали больше");
+        }
+        if (proizvedenieOsnov<proizvedeniePobochn){
+            System.out.println("Произведение элементов побочной диагонали больше");
+        }
+        if (proizvedenieOsnov==proizvedeniePobochn){
+            System.out.println("Произведения диагоналей равны");
+        }
+
+        //Посчитать сумму четных элементов стоящих над побочной диагональю (не
+        //включительно)
+        int summa = 0;
+        for (int i = 1; i < array.length - 2; i++) {
+            if (array[i][array.length - i - 2] % 2 == 0) {
+                summa += array[i][array.length - i - 2];
+            }
+        }
+        if (summa > 0) {
+            System.out.println("Сумма четных элементов, находящихся над побочной диагональю(не включительно): " + summa);
+        } else {
+            System.out.println("На побочной диагонали нечетных элементов нет(не включительно)");
+        }
+
+
+        //Транспонировать матрицу
+        int [][]interparation = new int[n][n];
+        for (int i = 0; i < array.length; i++) {
+            for (int j = 0; j < array[i].length; j++) {
+                interparation[i][j] = array[j][i];
+            }
+        }
+        for (int i = 0; i < array.length; i++) {
+            for (int j = 0; j < array[i].length; j++) {
+                System.out.print(interparation[i][j]+" ");
+            }
+            System.out.println(" ");
+        }
+
+    }
+}
