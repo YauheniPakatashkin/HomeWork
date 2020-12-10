@@ -11,6 +11,7 @@ public class Computer {
     private int count = 0; //счетчик включений/выключений
     private boolean power; //работает/не работает
     private boolean sgorel; // сгорел/не сгорел
+    private  static Random random = new Random();
 
     public static void main(String[] args) {
         Computer comp = new Computer("Intel", 1024, 500, 5);
@@ -38,10 +39,10 @@ public class Computer {
 
     public static void on(Computer comp) {
         System.out.println("[Попытка включить]");
-        if (comp.sgorel == false) {                       //проверяем сгоревший или нет
-            if (comp.cycle > comp.count) {                //проверяем не превышено ли количество циклов включений и выключений
+
+        if (!comp.sgorel) {                               //проверяем сгоревший или нет
+            if (comp.cycle > comp.count) {               //проверяем не превышено ли количество циклов включений и выключений
                 if (comp.power == false) {               //проверяем не работает ли уже компьютер
-                    Random random = new Random();
                     Scanner scanner = new Scanner(System.in);
                     int a = random.nextInt(2);
                     // int a =1; для теста
@@ -71,7 +72,6 @@ public class Computer {
         if (comp.sgorel == false) {
             if (comp.cycle > comp.count) {
                 if (comp.power == true) {
-                    Random random = new Random();
                     Scanner scanner = new Scanner(System.in);
                     int a = random.nextInt(2);
                     // int a = 1; для теста
