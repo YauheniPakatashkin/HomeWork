@@ -1,4 +1,4 @@
-package transport;
+package homeWork.transport;
 
 public class LandTransport extends Transport {
     private int numberOfWheels;

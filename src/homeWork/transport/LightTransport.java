@@ -1,4 +1,4 @@
-package transport;
+package homeWork.transport;
 
 public class LightTransport  extends LandTransport{
     private String bodyType;

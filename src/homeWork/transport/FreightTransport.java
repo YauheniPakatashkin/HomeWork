@@ -1,4 +1,4 @@
-package transport;
+package homeWork.transport;
 
 public class FreightTransport extends LandTransport {
     private int carrying;
