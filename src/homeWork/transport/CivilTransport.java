@@ -16,4 +16,9 @@ public class CivilTransport extends AirTransport {
         System.out.println("Количество пассажиров "+ numberOfPassengers);
         System.out.println("Наличие бизнесс-класса "+ buisnessClass);
     }
+    public void mesta(int passagers){
+        if(passagers<=numberOfPassengers)
+            System.out.println("Все в порялке");
+        else System.out.println("Мест нет");
+    }
 }

@@ -1,6 +1,6 @@
 package homeWork.transport;
 
-public class Transport {
+public abstract class Transport {
     protected int horsepower;
     protected int maxSpeed;
     protected  int mass;
@@ -26,7 +26,6 @@ public class Transport {
     }
 
     public static void main(String[] args) {
-        Transport transport = new Transport(500,150,1000,"Жигули");
         LightTransport car = new LightTransport(300,200,1200,"BMW",4,10,"sedan",4);
         car.description();
         car.distance(2);

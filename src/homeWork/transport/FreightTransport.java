@@ -7,4 +7,11 @@ public class FreightTransport extends LandTransport {
         super(horsepower, maxSpeed, mass, brand, numberOfWheels, fuelConsumption);
         this.carrying = carrying;
     }
+    private void sravnenie(int gruz) {
+        if (carrying >= gruz)
+            System.out.println("Грузовик загружен");
+            else
+            System.out.println("Вам нужен грузовик побольше");
+
+    }
 }

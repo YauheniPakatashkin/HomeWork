@@ -16,4 +16,18 @@ public class Military  extends AirTransport{
         System.out.println("Наличие системы катапультирования "+ejection);
         System.out.println("Количество ракет "+numberOfMissiles);
     }
+    private void katapulta(boolean ejection){
+        if(ejection)
+            System.out.println("катапультирование прошло успешно");
+        else
+            System.out.println("у вас нет таокй системы");
+    }
+    private void bang(){
+        if(numberOfMissiles>0){
+            numberOfMissiles --;
+            System.out.println("ракета пошла");
+        }
+        else System.out.println("боеприпасы отсутствуют");
+
+    }
 }

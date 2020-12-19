@@ -19,13 +19,13 @@ public class LightTransport  extends LandTransport {
         System.out.println("Количество пассажиров " + numberOfPassengers);
     }
 
+    public double distance (int hours){
+        return hours * super.maxSpeed;
+    }
+    private void volume(int hours){
+        double volume =this.distance(hours)/fuelConsumption;
+        System.out.println("За время "+ hours+ " ч, автомобиль "+brand+" двигаясь с максимальной скоростью " +
+                maxSpeed+" км/ч проедет "+distance(hours)+ " км и израсходует "+ volume+" литров топлива.");
 
-        public void distance (int hours){
-            double distance = hours * super.maxSpeed;
-            double volume = distance/fuelConsumption;
-            System.out.println("За время "+ hours+ " ч, автомобиль "+brand+" двигаясь с максимальной скоростью " +
-                    maxSpeed+" км/ч проедет "+distance+ " км и израсходует "+ volume+" литров топлива.");
-        }
-
-
+    }
 }
