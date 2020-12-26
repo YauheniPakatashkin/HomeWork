@@ -10,7 +10,7 @@ import homeWork.interfases.pants.WinterPants;
 public class Human implements Jacket, Pants, FootWear {
     private String name;
     private Jacket jacket;
-    private  Pants pants;
+    private Pants pants;
     private FootWear footWear;
 
     public String getName() {
@@ -51,7 +51,7 @@ public class Human implements Jacket, Pants, FootWear {
     }
 
     public static void main(String[] args) {
-        Human human1 = new Human("vovv", new WinterJacket(),new WinterPants(), new SportShoes());
+        Human human1 = new Human("vovv", new WinterJacket(), new WinterPants(), new SportShoes());
         human1.putOn();
         human1.takeOff();
 
