@@ -1,5 +1,8 @@
 package homeWork.hw14;
 
+
+import java.util.ArrayList;
+import java.util.Collections;
 import java.util.Comparator;
 
 public class HomeWork14 {
@@ -11,14 +14,10 @@ public class HomeWork14 {
     store.addProduct(apple);
     store.addProduct(banana);
     store.addProduct(pear);
-    store.getAllProducts();
+        ArrayList<Product> fff = new ArrayList<Product>();
+        Collections.sort(store.getAllProducts());
+         fff.addAll(0,);
     }
 
-    class comparator implements Comparator <Product> {
-        @Override
-        public int compare(Product o1, Product o2) {
-            if(o1.getPrice()<o2.getPrice())
-            return o1.getId();
-        }
-    }
+
 }

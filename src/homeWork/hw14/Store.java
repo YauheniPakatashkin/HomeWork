@@ -1,6 +1,9 @@
 package homeWork.hw14;
 
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Comparator;
+import java.util.List;
 
 public class Store {
      ArrayList<Product> productList = new ArrayList<>();
@@ -21,10 +24,10 @@ public class Store {
        }
     }
 
-    public void getAllProducts(){
-        for (Product i: productList){
-            System.out.println(i.getId()+" "+i.getName()+" "+ i.getPrice());
-        }
+    public ArrayList<Product> getAllProducts(){
+        ArrayList<Product> rezult= new ArrayList<>();
+        rezult.addAll(0,productList);
+        return rezult;
     }
 
     public void deleteProduct(int id){

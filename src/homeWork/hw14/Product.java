@@ -1,6 +1,8 @@
 package homeWork.hw14;
 
-public class Product {
+import java.util.Comparator;
+
+public class Product implements Comparable<Product>{
     private int id;
     private String name;
     private int price;
@@ -34,4 +36,10 @@ public class Product {
     public void setPrice(int price) {
         this.price = price;
     }
+    @Override
+    public int compareTo(Product other) {
+        return other.getPrice() - this.getPrice();
+    }
+
+
 }
